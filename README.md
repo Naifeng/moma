@@ -1,6 +1,6 @@
 # MoMA
 
-Multi-word modular arithmetic (MoMA) decomposes large bit-width integer arithmetic into machine-word-based operations. We implemented MoMA as a rewrite system using [SPIRAL](https://spiral.net/) as an extension of [the SPIRAL NTTX package](https://www.spiral.net/software/nttx.html). <!-- For more details, please view the full paper here. -->
+Multi-word modular arithmetic (MoMA) decomposes large bit-width integer arithmetic into machine-word-based operations. We implemented MoMA as a rewrite system using [SPIRAL](https://spiral.net/) as an extension of [the SPIRAL NTTX package](https://www.spiral.net/software/nttx.html). For more details, please view the full paper [here](https://arxiv.org/pdf/2501.07535).
 
 Dependencies
 ------------
@@ -47,7 +47,7 @@ bash ./benchmark.sh -d <input_bit_width>
 ```
 Supported input bit-widths are 128, 256, 384, and 768.
 
-If you are running the code in this repository on one of the three platforms detailed in the paper (H100, V100, RTX 4090), you can enable platform-specific performance tuning by using the `-p` option. For example, to reproduce the MoMA results in Figure 3a on an H100, run:
+If you are running the code in this repository on one of the three platforms detailed in the paper (H100, V100, RTX 4090), you can enable platform-specific performance tuning by using the `-p` option. For example, to benchmark MoMA-based NTTs on an H100, run:
 ```
 bash ./benchmark.sh -d 128 -p h100
 ```
@@ -96,7 +96,7 @@ Some manual editing is required to benchmark BLAS operations, in `cuda/cuda-test
 1. Set `benchmark_blas` to `true` in `benchmark.sh`.
 2. Set `blas_op` to one of `vvadd`, `vvsub`, `vvmul`, and `axpy` in `benchmark.sh`.
 
-You can now reproduce any BLAS operation in Figure 3 by running the following command in the `cuda/cuda-test` directory:
+You can now benchmark any supported BLAS operation by running the following command in the `cuda/cuda-test` directory:
 ```
 bash ./benchmark.sh -d <input_bit_width>
 ```
