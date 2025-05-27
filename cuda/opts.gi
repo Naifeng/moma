@@ -381,6 +381,8 @@ Class(NTTXMxPCUDAConf, NTTXDefaultConf, rec(
             useNested := false;
             if opts.gpuConfig = "h100" and opts.insize = 256 and n = 512 then
                 useNested := true;
+            elif opts.gpuConfig = "h100" and opts.insize = 128 and n = 2048 then
+                useNested := true;
             elif opts.gpuConfig = "rtx4090" and opts.insize = 128 and n = 2048 then
                 useNested := true;
             elif opts.gpuConfig = "rtx4090" and opts.insize = 256 and n = 512 then
@@ -403,7 +405,7 @@ Class(NTTXMxPCUDAConf, NTTXDefaultConf, rec(
                 if opts.gpuConfig = "h100" then
                     if opts.insize = 128 then
                         if n = 2048 then 
-                            nthread := 16;
+                            nthread := 256;
                         elif n in [4096, 8192] then
                             nthread := 512;
                         elif n >= 16384 and n < pow(2,21).v then
