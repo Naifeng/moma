@@ -2,3 +2,7 @@
 .vscode
 **/*.o
 cuda/cuda-test/mxpntt
+cuda/cuda-test/log.txt
+cuda/cuda-test/output.csv
+cuda/cuda-test/output.txt
+cuda/cuda-test/result.txt
