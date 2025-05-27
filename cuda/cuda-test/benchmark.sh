@@ -324,7 +324,7 @@ do
 			# -w: disable warnings
 			# nvcc ${test_file} -w -o ${test_obj}
 			# -Xcompiler -mcmodel=medium -Xcompiler \"-Wl,--no-relax\": solves failed to convert GOTPCREL relocation; relink with --no-relax
-			errmsg=$(nvcc ${test_file} -o ${test_obj} -w -Xcompiler -mcmodel=medium -Xcompiler \"-Wl,--no-relax\" 2>&1)
+			errmsg=$(nvcc ${test_file} -o ${test_obj} -w -Wno-deprecated-gpu-targets -Xcompiler -mcmodel=medium -Xcompiler \"-Wl,--no-relax\" 2>&1)
 			
 			if [ "$errmsg" = "" ]
 			then
