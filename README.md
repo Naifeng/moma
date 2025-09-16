@@ -1,6 +1,10 @@
 # MoMA
 
-Multi-word modular arithmetic (MoMA) decomposes large bit-width integer arithmetic into machine-word-based operations. We implemented MoMA as a rewrite system using [SPIRAL](https://spiral.net/) as an extension of [the SPIRAL NTTX package](https://www.spiral.net/software/nttx.html). For more details, please view the full paper [here](https://arxiv.org/pdf/2501.07535).
+[![Artifacts](https://img.shields.io/badge/Artifacts-Available-268B3A)](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
+[![Artifacts](https://img.shields.io/badge/Artifacts-Evaluated:Functional-EE2651)](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
+[![Results](https://img.shields.io/badge/Results-Reproduced-253875)](https://www.acm.org/publications/policies/artifact-review-and-badging-current)
+
+Multi-word modular arithmetic (MoMA) decomposes large bit-width integer arithmetic into machine-word-based operations. We implemented MoMA as a rewrite system using [SPIRAL](https://spiral.net/) as an extension of [the SPIRAL NTTX package](https://www.spiral.net/software/nttx.html). For more details, please view the full paper [here](https://dl.acm.org/doi/10.1145/3696443.3708948).
 
 Dependencies
 ------------
